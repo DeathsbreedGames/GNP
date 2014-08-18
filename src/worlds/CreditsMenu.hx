@@ -29,7 +29,7 @@ class CreditsMenu extends World {
 		addGraphic(new Text("captaincrunch80's other works in this project.", 10, 140));
 		addGraphic(new Text("Currently you may download the source-code to this", 10, 170));
 		addGraphic(new Text("project at the following link:", 10, 185));
-		addGraphic(new Text("http://themusicinnoise.net/Programs/GNP/GNP.html", 10, 230));
+		addGraphic(new Text("https://github.com/DeathsbreedGames/GNP", 10, 230));
 
 		addGraphic(new Text("Back", 420, 300));
 

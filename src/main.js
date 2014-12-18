@@ -9,10 +9,10 @@ var game = new Phaser.Game(480, 320, Phaser.AUTO, 'game', { preload:preload, cre
 
 // Preloader:
 function preload() {
-	game.load.image('bg', 'assets/background_glowy.png');
-	game.load.image('ball', 'assets/ball_glowy.png');
-	game.load.image('gnp', 'assets/logo.png');
-	game.load.image('paddle', 'assets/player_glowy.png');
+	game.load.image('bg', 'assets/gfx/background_glowy.png');
+	game.load.image('ball', 'assets/gfx/ball_glowy.png');
+	game.load.image('gnp', 'assets/gfx/logo.png');
+	game.load.image('paddle', 'assets/gfx/player_glowy.png');
 }
 
 // Start:

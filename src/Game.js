@@ -16,9 +16,7 @@ DeathsbreedGames.Game.prototype = {
 		this.playerSpeed = 250;
 
 		this.wKey = this.game.input.keyboard.addKey(Phaser.Keyboard.W);
-		//this.wKey.onDown.add(this.movePlayer1Up, this);
 		this.sKey = this.game.input.keyboard.addKey(Phaser.Keyboard.S);
-		//this.sKey.onDown.add(this.movePlayer1Down, this);
 
 		this.game.physics.arcade.enable(this.player1);
 		this.game.physics.arcade.enable(this.player2);
@@ -35,6 +33,7 @@ DeathsbreedGames.Game.prototype = {
 		} else {
 			this.player1.body.velocity.y = 0;
 		}
+
 		if(cursors.up.isDown) {
 			this.player2.body.velocity.y = -this.playerSpeed;
 		} else if(cursors.down.isDown) {

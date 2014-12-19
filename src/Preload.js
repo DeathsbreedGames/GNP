@@ -4,7 +4,9 @@ DeathsbreedGames.Preload = function() {};
 
 DeathsbreedGames.Preload.prototype = {
 	preload:function() {
-		this.splash = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'DGL');
+		this.splash = this.add.sprite(this.game.world.centerX, this.game.world.centerY - 50, 'DGL');
+		this.splash.width = 420;
+		this.splash.height  = 90;
 		this.splash.anchor.setTo(0.5);
 
 		this.preloadBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'LoadingBar');

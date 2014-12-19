@@ -2,8 +2,6 @@ var DeathsbreedGames = DeathsbreedGames || {};
 
 DeathsbreedGames.Game = function() {};
 
-var cursors;
-
 DeathsbreedGames.Game.prototype = {
 	create:function() {
 		this.game.world.setBounds(0, 0, 480, 320);
@@ -15,28 +13,25 @@ DeathsbreedGames.Game.prototype = {
 		this.player2Score = 0;
 		this.playerSpeed = 250;
 
-		this.wKey = this.game.input.keyboard.addKey(Phaser.Keyboard.W);
-		this.sKey = this.game.input.keyboard.addKey(Phaser.Keyboard.S);
+		this.ball = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'ball');
 
 		this.game.physics.arcade.enable(this.player1);
 		this.game.physics.arcade.enable(this.player2);
 		this.player1.body.collideWorldBounds = true;
 		this.player2.body.collideWorldBounds = true;
-
-		cursors = this.game.input.keyboard.createCursorKeys();
 	},
 	update:function() {
-		if(this.wKey.isDown) {
+		if(this.game.input.keyboard.isDown(Phaser.Keyboard.W)) {
 			this.player1.body.velocity.y = -this.playerSpeed;
-		} else if(this.sKey.isDown) {
+		} else if(this.game.input.keyboard.isDown(Phaser.Keyboard.S)) {
 			this.player1.body.velocity.y = this.playerSpeed;
 		} else {
 			this.player1.body.velocity.y = 0;
 		}
 
-		if(cursors.up.isDown) {
+		if(this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
 			this.player2.body.velocity.y = -this.playerSpeed;
-		} else if(cursors.down.isDown) {
+		} else if(this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
 			this.player2.body.velocity.y = this.playerSpeed;
 		} else {
 			this.player2.body.velocity.y = 0;

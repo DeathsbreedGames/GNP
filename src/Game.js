@@ -2,6 +2,10 @@ var DeathsbreedGames = DeathsbreedGames || {};
 
 DeathsbreedGames.Game = function() {};
 
+function degToRad(deg) {
+	return deg * (Math.PI / 180);
+}
+
 DeathsbreedGames.Game.prototype = {
 	create:function() {
 		this.game.world.setBounds(0, 0, 480, 320);
@@ -13,12 +17,16 @@ DeathsbreedGames.Game.prototype = {
 		this.player2Score = 0;
 		this.playerSpeed = 250;
 
-		this.ball = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'ball');
-
 		this.game.physics.arcade.enable(this.player1);
 		this.game.physics.arcade.enable(this.player2);
 		this.player1.body.collideWorldBounds = true;
 		this.player2.body.collideWorldBounds = true;
+
+		this.ball = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'ball');
+		this.game.physics.arcade.enable(this.ball);
+		this.ballSpeed = 300;
+		this.ball.body.velocity.x = Math.cos(degToRad(45)) * this.ballSpeed;
+		this.ball.body.velocity.y = Math.sin(degToRad(45)) * this.ballSpeed;
 	},
 	update:function() {
 		if(this.game.input.keyboard.isDown(Phaser.Keyboard.W)) {

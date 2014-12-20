@@ -8,8 +8,12 @@ var DeathsbreedGames = DeathsbreedGames || {};
 
 DeathsbreedGames.Game = function() {};
 
-function degToRad(deg) {
-	return deg * (Math.PI / 180);
+// Variables and functions for calculating ball x and y velocities
+var ballSpeed = 300;
+function getVel(deg) {
+	var x = Math.cos(deg * (Math.PI / 180)) * ballSpeed;
+	var y = Math.sin(deg * (Math.PI / 180)) * ballSpeed;
+	return new Phaser.Point(x, y);
 }
 
 DeathsbreedGames.Game.prototype = {
@@ -34,9 +38,7 @@ DeathsbreedGames.Game.prototype = {
 		// Setup the ball
 		this.ball = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'ball');
 		this.game.physics.arcade.enable(this.ball);
-		this.ballSpeed = 300;
-		this.ball.body.velocity.x = Math.cos(degToRad(45)) * this.ballSpeed;
-		this.ball.body.velocity.y = Math.sin(degToRad(45)) * this.ballSpeed;
+		this.ball.body.velocity = getVel(45);
 	},
 	update:function() {
 		// Check for player 1 input

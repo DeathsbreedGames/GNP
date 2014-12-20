@@ -1,8 +1,7 @@
 /**
  * GNP
- * Copyright (C) DeathsbreedGames 2014
+ * Copyright (C) 2014 DeathsbreedGames
  * License: GNU Affero GPLv3
- * Year 2015
  * 
  */
 var DeathsbreedGames = DeathsbreedGames || {};

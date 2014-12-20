@@ -1,3 +1,9 @@
+/**
+ * GNP
+ * Copyright (C) 2014 DeathsbreedGames
+ * License: GNU Affero GPLv3
+ * 
+ */
 var DeathsbreedGames = DeathsbreedGames || {};
 
 DeathsbreedGames.Preload = function() {};

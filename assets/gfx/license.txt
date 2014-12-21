@@ -1,4 +1,14 @@
-This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US.
+The following works were created by CaptainCrunch80 <http://opengameart.org/users/captaincrunch80>,
+and are licensed under the CC0 (Public Domain) license:
 
-Original owner of all the files ending in "glowy" is: http://opengameart.org/users/captaincrunch80
-The logo file is owned by Nicolás Andrés Ortega, the creator of this game.
+background_glowy.png
+ball_glowy.png
+player_glowy.png
+
+The following file were created by DeathsbreedGames <http://deathsbreedgames.github.io/>,
+and are licensed under the CC-BY-SA (Creative Commons Attribution-ShareAlike) license:
+
+cursor.png
+DeathsbreedGames_Production.png
+LoadingBar.png
+logo.png

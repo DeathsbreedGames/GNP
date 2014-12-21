@@ -56,7 +56,14 @@ DeathsbreedGames.Game.prototype = {
 			this.player2.body.velocity.y = 0;
 		}
 
+		// Check for collision with paddles
 		this.game.physics.arcade.collide(this.player1, this.ball);
 		this.game.physics.arcade.collide(this.player2, this.ball);
+
+		// Check for collision with goals
+		if(this.ball.position.x < 5 || this.ball.position.x > 415) {
+			// TODO: reset the ball
+			console.log('GOOOOOOOOAAAL!!!');
+		}
 	}
 };

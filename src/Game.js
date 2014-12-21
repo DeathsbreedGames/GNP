@@ -8,25 +8,18 @@ var DeathsbreedGames = DeathsbreedGames || {};
 
 DeathsbreedGames.Game = function() {};
 
-// Variables and functions for calculating ball x and y velocities
-var ballSpeed = 300;
-function getVel(deg) {
-	var x = Math.cos(deg * (Math.PI / 180)) * ballSpeed;
-	var y = Math.sin(deg * (Math.PI / 180)) * ballSpeed;
-	return new Phaser.Point(x, y);
-}
-
 DeathsbreedGames.Game.prototype = {
 	create:function() {
 		// Setup basic game stuff
 		this.game.world.setBounds(0, 0, 480, 320);
+		this.game.physics.startSystem(Phaser.Physics.ARCADE);
 		this.background = this.game.add.sprite(0, 0, 'bg');
 
 		// Create players and player variables
 		this.player1 = this.game.add.sprite(20, 120, 'paddle');
 		this.player2 = this.game.add.sprite(446, 120, 'paddle');
-		this.player1Score = 0;
-		this.player2Score = 0;
+		this.player1.score = 0;
+		this.player2.score = 0;
 		this.playerSpeed = 250;
 
 		// Allow players to collide with the edge of the world
@@ -34,11 +27,15 @@ DeathsbreedGames.Game.prototype = {
 		this.game.physics.arcade.enable(this.player2);
 		this.player1.body.collideWorldBounds = true;
 		this.player2.body.collideWorldBounds = true;
+		this.player1.body.immovable = true;
+		this.player2.body.immovable = true;
 
 		// Setup the ball
 		this.ball = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'ball');
 		this.game.physics.arcade.enable(this.ball);
-		this.ball.body.velocity = getVel(45);
+		this.ball.body.velocity = new Phaser.Point(250, 250);
+		this.ball.body.collideWorldBounds = true;
+		this.ball.body.bounce = new Phaser.Point(1, 1);
 	},
 	update:function() {
 		// Check for player 1 input
@@ -58,5 +55,8 @@ DeathsbreedGames.Game.prototype = {
 		} else {
 			this.player2.body.velocity.y = 0;
 		}
+
+		this.game.physics.arcade.collide(this.player1, this.ball);
+		this.game.physics.arcade.collide(this.player2, this.ball);
 	}
 };

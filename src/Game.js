@@ -36,6 +36,10 @@ DeathsbreedGames.Game.prototype = {
 		this.ball.body.velocity = (Math.random() < 0.5) ? new Phaser.Point(250, 250):new Phaser.Point(-250, -250);
 		this.ball.body.collideWorldBounds = true;
 		this.ball.body.bounce = new Phaser.Point(1, 1);
+
+		// Score texts:
+		this.score1 = this.game.add.text(10, 15, '0', { font: '16px Arial', fill: '#fff' });
+		this.score2 = this.game.add.text(440, 15, '0', { font: '16px Arial', fill: '#fff' });
 	},
 	update:function() {
 		// Check for player 1 input
@@ -61,12 +65,14 @@ DeathsbreedGames.Game.prototype = {
 		this.game.physics.arcade.collide(this.player2, this.ball);
 
 		// Check for collision with goals
-		if(this.ball.position.x < 1 ) {
+		if(this.ball.body.x < 1 ) {
 			this.player2.score++;
+			this.score2.text = this.player2.score;
 			this.ball.position = new Phaser.Point(this.game.world.centerX, this.game.world.centerY);
 			this.ball.body.velocity = (Math.random() < 0.5) ? new Phaser.Point(250, 250):new Phaser.Point(-250, -250);
-		} else if(this.ball.position.x > 463) {
+		} else if(this.ball.body.x > 463) {
 			this.player1.score++;
+			this.score1.text = this.player1.score;
 			this.ball.position = new Phaser.Point(this.game.world.centerX, this.game.world.centerY);
 			this.ball.body.velocity = (Math.random() < 0.5) ? new Phaser.Point(250, 250):new Phaser.Point(-250, -250);
 		}

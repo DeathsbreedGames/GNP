@@ -14,7 +14,10 @@ function playTwoPlayer() {
 
 DeathsbreedGames.MainMenu.prototype = {
 	create:function() {
-		var twoPlayer = this.game.add.button(this.game.world.centerX, 50, 'TwoPlayerButton', playTwoPlayer, this);
+		this.logo = this.game.add.sprite(this.game.world.centerX, 5, 'logo');
+		this.logo.anchor.set(0.5, 0);
+
+		var twoPlayer = this.game.add.button(this.game.world.centerX, this.logo.y + this.logo.height + 10, 'TwoPlayerButton', playTwoPlayer, this);
 		twoPlayer.anchor.set(0.5);
 		var version = this.game.add.text(5, 5, 'v1.5-alpha0', { font: '12px Arial', fill: '#fff' });
 		var credits = 'Credits:\nDevelopment - DeathsbreedGames - GNU Affero GPLv3\nGraphics - CaptainCrunch80 - CC0\nMusic - FoxSynergy - CC-BY 3.0\nSFX - CaptainCrunch80 - CC0';

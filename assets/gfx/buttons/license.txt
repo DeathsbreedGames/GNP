@@ -1,0 +1,7 @@
+The following file were created by DeathsbreedGames <http://deathsbreedgames.github.io/>,
+and are licensed under the CC-BY-SA (Creative Commons Attribution-ShareAlike) license:
+
+Credits.png
+Instructions.png
+Single-Player.png
+Two-Player.png

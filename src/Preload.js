@@ -26,6 +26,9 @@ DeathsbreedGames.Preload.prototype = {
 		this.load.audio('score', 'assets/sfx/scoresfx.ogg');
 		this.load.audio('music', 'assets/sfx/Never_Stop_Running.ogg');
 		this.load.image('SinglePlayerButton', 'assets/gfx/buttons/Single-Player.png');
+		this.load.image('TwoPlayerButton', 'assets/gfx/buttons/Two-Player.png');
+		this.load.image('InstructionsButton', 'assets/gfx/buttons/Instructions.png');
+		this.load.image('CreditsButton', 'assets/gfx/buttons/Credits.png');
 		this.load.image('bg', 'assets/gfx/background_glowy.png');
 		this.load.image('ball', 'assets/gfx/ball_glowy.png');
 		this.load.image('logo', 'assets/gfx/logo.png');

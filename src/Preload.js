@@ -29,6 +29,7 @@ DeathsbreedGames.Preload.prototype = {
 		this.load.image('TwoPlayerButton', 'assets/gfx/buttons/Two-Player.png');
 		this.load.image('InstructionsButton', 'assets/gfx/buttons/Instructions.png');
 		this.load.image('CreditsButton', 'assets/gfx/buttons/Credits.png');
+		this.load.image('BackButton', 'assets/gfx/buttons/Back.png');
 		this.load.image('bg', 'assets/gfx/background_glowy.png');
 		this.load.image('ball', 'assets/gfx/ball_glowy.png');
 		this.load.image('logo', 'assets/gfx/logo.png');

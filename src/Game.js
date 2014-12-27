@@ -78,15 +78,15 @@ DeathsbreedGames.Game.prototype = {
 
 		// Check for collision with goals
 		if(this.ball.body.x < 1 ) {
+			this.ball.position = new Phaser.Point(this.game.world.centerX, this.game.world.centerY);
+			this.ball.body.velocity = (Math.random() < 0.5) ? new Phaser.Point(250, 250):new Phaser.Point(-250, -250);
 			this.player2.score++;
 			this.score2.text = this.player2.score;
+		} else if(this.ball.body.x > 463) {
 			this.ball.position = new Phaser.Point(this.game.world.centerX, this.game.world.centerY);
 			this.ball.body.velocity = (Math.random() < 0.5) ? new Phaser.Point(250, 250):new Phaser.Point(-250, -250);
-		} else if(this.ball.body.x > 463) {
 			this.player1.score++;
 			this.score1.text = this.player1.score;
-			this.ball.position = new Phaser.Point(this.game.world.centerX, this.game.world.centerY);
-			this.ball.body.velocity = (Math.random() < 0.5) ? new Phaser.Point(250, 250):new Phaser.Point(-250, -250);
 		}
 	}
 };

@@ -10,7 +10,7 @@ DeathsbreedGames.CreditsMenu = function() {};
 
 DeathsbreedGames.CreditsMenu.prototype = {
 	create:function() {
-		var version = this.game.add.text(475, 315, 'v1.5-alpha0', { font: '12px Arial', fill: '#fff' });
+		var version = this.game.add.text(475, 315, 'v1.5', { font: '12px Arial', fill: '#fff' });
 		version.anchor.set(1, 1);
 
 		var title = this.game.add.text(this.game.world.centerX, 10, 'Credits', { font: '32px Arial', fill: '#fff' });

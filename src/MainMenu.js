@@ -13,7 +13,9 @@ DeathsbreedGames.MainMenu.prototype = {
 		var logo = this.game.add.sprite(this.game.world.centerX, 5, 'logo');
 		logo.anchor.set(0.5, 0);
 
-		var twoPlayer = this.game.add.button(this.game.world.centerX, logo.y + logo.height + 10, 'TwoPlayerButton', playTwoPlayer, this);
+		var onePlayer = this.game.add.button(this.game.world.centerX, logo.y + logo.height + 10, 'SinglePlayerButton', playOnePlayer, this);
+		onePlayer.anchor.set(0.5);
+		var twoPlayer = this.game.add.button(this.game.world.centerX, onePlayer.y + onePlayer.height + 5, 'TwoPlayerButton', playTwoPlayer, this);
 		twoPlayer.anchor.set(0.5);
 		var instructions = this.game.add.button(this.game.world.centerX, twoPlayer.y + twoPlayer.height + 5, 'InstructionsButton', instructionsMenu, this);
 		instructions.anchor.set(0.5);

@@ -6,6 +6,8 @@
  */
 var DeathsbreedGames = DeathsbreedGames || {};
 
+var singlePlayer = false;
+
 DeathsbreedGames.Game = function() {};
 
 DeathsbreedGames.Game.prototype = {
@@ -52,12 +54,22 @@ DeathsbreedGames.Game.prototype = {
 		}
 
 		// Check for player 2 input
-		if(this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
-			this.player2.body.velocity.y = -this.playerSpeed;
-		} else if(this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
-			this.player2.body.velocity.y = this.playerSpeed;
+		if(!singlePlayer) {
+			if(this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
+				this.player2.body.velocity.y = -this.playerSpeed;
+			} else if(this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
+				this.player2.body.velocity.y = this.playerSpeed;
+			} else {
+				this.player2.body.velocity.y = 0;
+			}
 		} else {
-			this.player2.body.velocity.y = 0;
+			if(this.ball.body.y < this.player2.body.y) {
+				this.player2.body.velocity.y = -this.playerSpeed;
+			} else if(this.ball.body.y > this.player2.body.y) {
+				this.player2.body.velocity.y = this.playerSpeed;
+			} else {
+				this.player2.body.velocity.y = 0;
+			}
 		}
 
 		// Check for collision with paddles

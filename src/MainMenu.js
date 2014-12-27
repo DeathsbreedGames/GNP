@@ -12,6 +12,10 @@ function playTwoPlayer() {
 	this.state.start('Game');
 }
 
+function instructionsMenu() {
+	this.state.start('InstructionsMenu');
+}
+
 function creditsMenu() {
 	this.state.start('CreditsMenu');
 }
@@ -23,7 +27,9 @@ DeathsbreedGames.MainMenu.prototype = {
 
 		var twoPlayer = this.game.add.button(this.game.world.centerX, logo.y + logo.height + 10, 'TwoPlayerButton', playTwoPlayer, this);
 		twoPlayer.anchor.set(0.5);
-		var credits = this.game.add.button(this.game.world.centerX, twoPlayer.y + twoPlayer.height + 5, 'CreditsButton', creditsMenu, this);
+		var instructions = this.game.add.button(this.game.world.centerX, twoPlayer.y + twoPlayer.height + 5, 'InstructionsButton', instructionsMenu, this);
+		instructions.anchor.set(0.5);
+		var credits = this.game.add.button(this.game.world.centerX, instructions.y + instructions.height + 5, 'CreditsButton', creditsMenu, this);
 		credits.anchor.set(0.5);
 	},
 	update:function() {

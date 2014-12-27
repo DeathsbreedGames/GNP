@@ -17,8 +17,9 @@ DeathsbreedGames.CreditsMenu.prototype = {
 		var version = this.game.add.text(475, 315, 'v1.5-alpha0', { font: '12px Arial', fill: '#fff' });
 		version.anchor.set(1, 1);
 
-		var creditsTitle = this.game.add.text(this.game.world.centerX, 10, 'Credits', { font: '32px Arial', fill: '#fff' });
-		creditsTitle.anchor.set(0.5, 0);
+		var title = this.game.add.text(this.game.world.centerX, 10, 'Credits', { font: '32px Arial', fill: '#fff' });
+		title.anchor.set(0.5, 0);
+		
 		var credits = 'Development - DeathsbreedGames - GNU Affero GPLv3\nGraphics - CaptainCrunch80 - CC0\nMusic - FoxSynergy - CC-BY 3.0\nSFX - CaptainCrunch80 - CC0\nFont - Brian Kent - Freeware';
 		var creditsText = this.game.add.text(this.game.world.centerX, this.game.world.centerY, credits, { font: '12px Arial', fill: '#fff' });
 		creditsText.anchor.set(0.5, 0.5);

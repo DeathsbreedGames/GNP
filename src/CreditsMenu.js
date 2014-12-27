@@ -8,10 +8,6 @@ var DeathsbreedGames = DeathsbreedGames || {};
 
 DeathsbreedGames.CreditsMenu = function() {};
 
-function backToMain() {
-	this.state.start('MainMenu');
-}
-
 DeathsbreedGames.CreditsMenu.prototype = {
 	create:function() {
 		var version = this.game.add.text(475, 315, 'v1.5-alpha0', { font: '12px Arial', fill: '#fff' });

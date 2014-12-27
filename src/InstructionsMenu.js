@@ -8,10 +8,6 @@ var DeathsbreedGames = DeathsbreedGames || {};
 
 DeathsbreedGames.InstructionsMenu = function() {};
 
-function backToMain() {
-	this.state.start('MainMenu');
-}
-
 DeathsbreedGames.InstructionsMenu.prototype = {
 	create:function() {
 		var title = this.game.add.text(this.game.world.centerX, 10, 'Instructions', { font: '32px Arial', fill: '#fff' });

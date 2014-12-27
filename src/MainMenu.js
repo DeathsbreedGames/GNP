@@ -8,18 +8,6 @@ var DeathsbreedGames = DeathsbreedGames || {};
 
 DeathsbreedGames.MainMenu = function() {};
 
-function playTwoPlayer() {
-	this.state.start('Game');
-}
-
-function instructionsMenu() {
-	this.state.start('InstructionsMenu');
-}
-
-function creditsMenu() {
-	this.state.start('CreditsMenu');
-}
-
 DeathsbreedGames.MainMenu.prototype = {
 	create:function() {
 		var logo = this.game.add.sprite(this.game.world.centerX, 5, 'logo');

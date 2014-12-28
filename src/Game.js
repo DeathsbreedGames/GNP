@@ -88,5 +88,12 @@ DeathsbreedGames.Game.prototype = {
 			this.player1.score++;
 			this.score1.text = this.player1.score;
 		}
+
+		// Check for winner
+		if(this.player1.score >= 10) {
+			//backToMain();
+		} else if(this.player2.score >= 10) {
+			//backToMain();
+		}
 	}
 };

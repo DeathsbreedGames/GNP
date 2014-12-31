@@ -42,6 +42,9 @@ DeathsbreedGames.Game.prototype = {
 		// Score texts:
 		this.score1 = this.game.add.text(10, 15, '0', { font: '16px Arial', fill: '#fff' });
 		this.score2 = this.game.add.text(440, 15, '0', { font: '16px Arial', fill: '#fff' });
+
+		this.scorefx = this.game.add.audio('hit');
+		this.hitfx = this.game.add.audio('score');
 	},
 	update:function() {
 		// Check for player 1 input

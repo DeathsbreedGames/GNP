@@ -17,7 +17,7 @@ DeathsbreedGames.Preload.prototype = {
 		this.splash.anchor.setTo(0.5);
 
 		// Setup the loading bar
-		this.preloadBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'LoadingBar');
+		this.preloadBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY + 20, 'LoadingBar');
 		this.preloadBar.anchor.setTo(0.5);
 		this.load.setPreloadSprite(this.preloadBar);
 
